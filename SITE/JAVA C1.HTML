@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal - Merged Layout</title>
+    
+    <style>
+        /* BASE & LAYOUT STYLES */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex; /* Enable Flexbox for main layout */
+            flex-direction: column; /* Stack elements vertically */
+            min-height: 100vh; /* Ensure it covers the whole viewport height */
+        }
+        
+        /* HEADER & FOOTER STYLES (15% + 10% height distribution) */
+        header, footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            flex-shrink: 0; /* Prevents shrinking */
+        }
+        header h1, footer p { margin: 0; }
+
+        /* MAIN CONTENT AREA CONTAINER (The 75% height middle row) */
+        .main-container {
+            display: flex; /* Enable Flexbox for middle row columns */
+            flex-grow: 1; /* Allows the container to fill the remaining vertical space */
+            overflow: hidden; /* Prevent vertical scrolling on the container itself */
+        }
+        
+        /* NAVIGATION STYLES (20% width) */
+        nav {
+            width: 20%;
+            background: #f4f4f4;
+            padding: 10px;
+            flex-shrink: 0;
+            overflow-y: auto; /* Allows scrolling if navigation list is long */
+            border-right: 1px solid #ddd;
+        }
+        nav a {
+            display: block;
+            padding: 5px 0;
+            text-decoration: none;
+            color: #0073e6;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* MAIN SECTION STYLES (60% width) */
+        main {
+            width: 60%;
+            padding: 20px;
+            overflow-y: auto; /* Allows scrolling for main content */
+        }
+        
+        /* ASIDE STYLES (20% width) */
+        aside {
+            width: 20%;
+            background: #ffe6e6; /* Light red/pink for announcements */
+            padding: 10px;
+            flex-shrink: 0;
+            overflow-y: auto; /* Allows scrolling for the sidebar */
+            border-left: 1px solid #ddd;
+        }
+
+        /* GENERAL CONTENT STYLES */
+        table { border-collapse: collapse; width: 100%; margin-top: 15px; }
+        table, th, td { border: 1px solid black; padding: 8px; }
+        .highlight { color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1> Kandra Technical College</h1>
+        <p><em>E
+        mpowering Students with Skills</em></p>
+    </header>
+
+    <div class="main-container">
+        
+        <nav>
+            <h3>Portal Links</h3>
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#students">Students</a>
+            <a href="#media">Media</a>
+            <a href="#form">Register</a>
+        </nav>
+
+        <main>
+            <section id="home">
+                <h2>Welcome</h2>
+                <p>This is the <strong>Student Portal</strong> where you can find
+                   <mark>information</mark>, <u>announcements</u>, and updates.</p>
+            </section>
+
+            <section id="about">
+                <h2>About Us</h2>
+                <p>We offer various programs in <b>IT</b>, <i>Business</i>, and <em>Engineering</em>.</p>
+                <p>Chemistry: H<sub>2</sub>O | Mathematics: E = mc<sup>2</sup></p>
+            </section>
+
+            <section id="students">
+                <h2>Student Information</h2>
+                <h3>Available Courses</h3>
+                <ul>
+                    <li>Computer Science</li>
+                    <li>Electrical Engineering</li>
+                    <li>Business Management</li>
+                </ul>
+                </section>
+            
+            <section id="form">
+                <h2>Student Registration Form</h2>
+                <form action="submit.php" method="post">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="fullname"><br><br>
+                    </form>
+            </section>
+            
+        </main>
+
+        <aside>
+            <h3> Announcements</h3>
+            <p><span class="highlight">Exam week starts on 10th Oct.</span></p>
+            <details>
+                <summary>More Info</summary>
+                <p>Exam timetable will be available online.</p>pr
+            </details>
+        </aside>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Kandra Technical College | Built with <code>&lt;HTML&gt;</code></p>
+    </footer>
+
+</body>
+</html>
